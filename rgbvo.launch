@@ -10,7 +10,8 @@
 		<remap from="rgb/camera_info" to="/camera/color/camera_info"/>
 		<remap from="depth/image" to="/camera/depth/image_raw"/>
 		<param name="publish_tf" value="false"/>
+		<param name="frame_id" value="camera"/>
 		<remap from="/odom" to="/visual_odom"/>
 	</node>
-	<node pkg="tf" type="static_transform_publisher" name="transform1"  args="0 0 0 0 0 0 camera chassis  10"/>
+	<node pkg="tf" type="static_transform_publisher" name="transform1"  args="0 0 0 0 0 0 camera_depth_optical_frame chassis  10"/>
 </launch>
