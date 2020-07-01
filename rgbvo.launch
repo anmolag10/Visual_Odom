@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<launch>
+	<include file="$(find mybot_description)/launch/rs.launch">
+		<param name="align_depth" value="true"/>
+	</include>
+
+	<node pkg="rtabmap_ros" type="rgbd_odometry" name="vo">
+		<remap from="rgb/image" to="/camera/color/image_raw"/>
+		<remap from="rgb/camera_info" to="/camera/color/camera_info"/>
+		<remap from="depth/image" to="/camera/depth/image_raw"/>
+		<param name="publish_tf" value="false"/>
+		<remap from="/odom" to="/visual_odom"/>
+	</node>
+	<node pkg="tf" type="static_transform_publisher" name="transform1"  args="0 0 0 0 0 0 camera chassis  10"/>
+</launch>
