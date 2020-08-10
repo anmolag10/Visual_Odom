@@ -9,7 +9,7 @@
     ``` bash
            rosrun tf static_transform_publisher 0 0 0 0 0 0 1 camera_link base_link 10
            
-           ```
+          
  3. Launch the launch file for respective rgb or stero odometery 
     
   
